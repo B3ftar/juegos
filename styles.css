@@ -1,8 +1,8 @@
-html {background-color: #ffffff;}
+html {background-color: #0529c7;}
 body {margin: 0px;}
   
 header {
-    background-color: #db5405;
+    background-color: #1803d6;
     color: white;
     padding: 10px;
     display: flex;
@@ -48,7 +48,13 @@ header {
     }
   }
   
-
+  .encabezado {
+    background-color: white; /* Color de fondo blanco */
+    width: 100%; /* Ancho completo */
+    padding: 25px 0; /* Espacio de relleno superior e inferior */
+    text-align: center; /* Centrar los elementos */
+    margin-top: 25px; /* Agregar espacio arriba */
+}
 
 /* Estilos para los íconos */
 /* Estilos para los íconos */
@@ -61,7 +67,7 @@ header {
   
   .icono {
     display: inline-block;
-    width: 120px; /* Ancho fijo para los contenedores de los íconos */
+    width: 150px; /* Ancho fijo para los contenedores de los íconos */
     margin: 0 10px; /* Ajuste del margen izquierdo y derecho para centrarlos */
     transition: transform 0.3s ease;
     overflow: hidden;
@@ -82,7 +88,7 @@ header {
   /* Media query para ajustar los íconos en pantallas pequeñas */
   @media (max-width: 768px) {
     .icono {
-      width: 80px; /* Reducir el ancho de los contenedores de los íconos */
+      width: 100px; /* Reducir el ancho de los contenedores de los íconos */
       margin: 0 5px; /* Ajuste del margen izquierdo y derecho para centrarlos */
     }
   }
@@ -217,7 +223,7 @@ footer {
     
     bottom: 0;
     width: 100%;
-    background-color: #d34f03;
+    background-color: #0322d3;
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -225,25 +231,9 @@ footer {
 
 
 
-  #character {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999; /* Asegura que el personaje esté por encima de otros elementos */
-    cursor: pointer;
-    width: 50px; /* Tamaño del personaje */
-    height: auto;
-  }
+
+
   
-  
-  #character:hover {
-    transform: scale(1.1);
-  }
-  
-
-
-
-
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -297,3 +287,126 @@ footer {
     justify-content: center;
 }
 
+
+
+
+
+.contenedor-imagen {
+  position: relative;
+  width: 100%;
+}
+
+.contenedor-imagen img {
+  width: 100%;
+  height: auto;
+}
+.contenedor-imagen:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/7.jpg'); /* Ruta de tu imagen de fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; /* Asegura que la imagen de fondo esté detrás de los otros elementos */
+}
+
+
+/* Estilos para el carrusel */
+/* Estilos para el carrusel */
+.novedades {
+  text-align: center;
+  position: relative;
+  width: 50%; /* Tamaño del carrusel */
+  margin: 0 auto; /* Centrar el carrusel */
+}
+
+.carrusel {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative; /* Añadir posición relativa para las flechas */
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100%; /* Ancho del slide */
+  padding: 10px;
+  display: inline-block;
+}
+
+.slide img {
+  width: 100%; /* Tamaño de las imágenes */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
+}
+
+/* Estilos para los botones del carrusel */
+.anterior,
+.siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.anterior {
+  left: 0; /* Pegar la flecha izquierda al borde izquierdo del carrusel */
+}
+
+.siguiente {
+  right: 0; /* Pegar la flecha derecha al borde derecho del carrusel */
+}
+
+.slide {
+  color: #fff; /* Color del texto blanco */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto de sombra de texto */
+}
+
+.slide p {
+  font-size: 18px; /* Tamaño del texto */
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para el título */
+.titulo {
+  text-align: center;
+}
+
+.titulo h2 {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #0c3d86; /* Color blanco */
+  font-size: 36px; /* Tamaño del texto */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Efecto de brillo (glow) */
+  animation: moveGlow 2s linear infinite; /* Animación de movimiento con glow */
+}
+
+/* Definir la animación de movimiento con glow */
+@keyframes moveGlow {
+  0% {
+      transform: translateY(-5px);
+  }
+  50% {
+      transform: translateY(5px);
+  }
+  100% {
+      transform: translateY(-5px);
+  }
+}
