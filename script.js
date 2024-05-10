@@ -60,3 +60,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     renderCatalogo();
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var slides = document.querySelectorAll('.slide');
+    var currentIndex = 0;
+
+    function mostrarSlide(index) {
+        slides.forEach(function(slide) {
+            slide.style.display = 'none';
+        });
+        slides[index].style.display = 'block';
+    }
+
+    mostrarSlide(currentIndex);
+
+    document.querySelector('.anterior').addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        mostrarSlide(currentIndex);
+    });
+
+    document.querySelector('.siguiente').addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        mostrarSlide(currentIndex);
+    });
+});
